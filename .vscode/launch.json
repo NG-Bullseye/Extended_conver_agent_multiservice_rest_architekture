@@ -3,25 +3,37 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Restart Server and Run",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "preLaunchTask": "▶️ restart Server"
+            "name": "Attach to Server",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",
+                "port": 5678
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}",
+                    "remoteRoot": "/var/lib/docker/volumes/homeassistant_data/_data/custom_components/extended_conversation_client"
+                }
+            ],
+            "justMyCode": false
+        }
+    ],
+    "compounds": [
+        {
+            "name": "▶️ Restart Server and Debug",
+            "configurations": ["Attach to Server"],
+            "preLaunchTask": "▶️ restart Server",
+            "stopAll": true
         },
         {
-            "name": "Stop Server",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
+            "name": "⏹️ Stop Server",
             "preLaunchTask": "⏹️ Stop Server"
         },
         {
-            "name": "Check Server Status",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
+            "name": "ℹ️ Check Server Status",
             "preLaunchTask": "ℹ️ Check Server Status"
         }
     ]
 }
+

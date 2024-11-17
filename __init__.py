@@ -206,9 +206,8 @@ class ExternalServerAgent(conversation.AbstractConversationAgent):
                 response_text = "Turned on Helix light"
             else:
                 response_text = "Hello World local"
-
             intent_response = intent.IntentResponse(language=user_input.language)
-            intent_response.async_set_speech(response_text)
+            intent_response.async_set_speech(user_input.text.lower()+" local")
             return conversation.ConversationResult(
                 response=intent_response,
                 conversation_id=None
