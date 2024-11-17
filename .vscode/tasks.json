@@ -1,47 +1,24 @@
+// tasks.json
 {
     "version": "2.0.0",
     "tasks": [
         {
             "label": "▶️ restart Server",
             "type": "shell",
-            "command": "echo raspberry | sudo -S /var/lib/docker/volumes/homeassistant_data/_data/custom_components/extended_conversation_client/ServerInterface/autostart_server_restart.sh",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new",
-                "clear": true
-            },
-            "group": "build"
+            "command": "your_restart_command_here",
+            "problemMatcher": []
         },
         {
             "label": "⏹️ Stop Server",
             "type": "shell",
-            "command": "echo raspberry | sudo -S /var/lib/docker/volumes/homeassistant_data/_data/custom_components/extended_conversation_client/ServerInterface/autostart_server_stop.sh",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new",
-                "clear": true
-            },
-            "group": "build"
+            "command": "your_stop_command_here",
+            "problemMatcher": []
         },
         {
             "label": "ℹ️ Check Server Status",
             "type": "shell",
-            "command": "echo raspberry | sudo -S /var/lib/docker/volumes/homeassistant_data/_data/custom_components/extended_conversation_client/ServerInterface/autostart_server_check.sh",
-            "options": {
-                "cwd": "${workspaceFolder}"
-            },
-            "presentation": {
-                "reveal": "always",
-                "panel": "new",
-                "clear": true
-            },
-            "group": "test"
+            "command": "your_check_status_command_here",
+            "problemMatcher": []
         }
     ]
 }

@@ -1,0 +1,27 @@
+// launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Restart Server and Run",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "preLaunchTask": "▶️ restart Server"
+        },
+        {
+            "name": "Stop Server",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "preLaunchTask": "⏹️ Stop Server"
+        },
+        {
+            "name": "Check Server Status",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "preLaunchTask": "ℹ️ Check Server Status"
+        }
+    ]
+}
